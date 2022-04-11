@@ -4,9 +4,9 @@ import dotenv from "dotenv";
 
 import todo from './routes/routes';
 
-dotenv.config();
-
 const app = express();
+
+dotenv.config();
 
 app.use(express.urlencoded({
    extended: false
@@ -15,7 +15,7 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 mongoose.connect(
-   process.env.MONGO_URL as string,
+   `${process.env.MONGO_URI}`,
    {
       useUnifiedTopology: true,
       useNewUrlParser: true,
