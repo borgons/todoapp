@@ -15,7 +15,7 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 mongoose.connect(
-   'mongodb://localhost:27017/sample3',
+   process.env.MONGO_URL as string,
    {
       useUnifiedTopology: true,
       useNewUrlParser: true,
